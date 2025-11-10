@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Surat Digital Services - Fast, Accurate, Digital. Online form filling, Aadhaar card update, PAN card services, GST registration, and more.">
+    <title>Surat Digital Services - Fast • Accurate • Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1976D2;
+            --dark-blue: #0D47A1;
+            --light-blue: #E3F2FD;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 4px 20px rgba(25, 118, 210, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .logo-text h1 {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: var(--primary-blue);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 150px 5% 80px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 100%;
+            background: 
+                linear-gradient(to bottom, 
+                    rgba(255, 153, 51, 0.15) 0%, 
+                    rgba(255, 153, 51, 0.15) 33.33%, 
+                    rgba(255, 255, 255, 0.15) 33.33%, 
+                    rgba(255, 255, 255, 0.15) 66.66%, 
+                    rgba(19, 136, 8, 0.15) 66.66%, 
+                    rgba(19, 136, 8, 0.15) 100%
+                );
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 100px;
+            background: 
+                radial-gradient(circle at center, 
+                    rgba(255, 255, 255, 0.1) 0%, 
+                    rgba(255, 255, 255, 0.1) 25%, 
+                    transparent 25%, 
+                    transparent 100%
+                ),
+                conic-gradient(
+                    from 0deg,
+                    rgba(0, 0, 139, 0.2) 0deg 15deg,
+                    transparent 15deg 30deg,
+                    rgba(0, 0, 139, 0.2) 30deg 45deg,
+                    transparent 45deg 60deg,
+                    rgba(0, 0, 139, 0.2) 60deg 75deg,
+                    transparent 75deg 90deg,
+                    rgba(0, 0, 139, 0.2) 90deg 105deg,
+                    transparent 105deg 120deg,
+                    rgba(0, 0, 139, 0.2) 120deg 135deg,
+                    transparent 135deg 150deg,
+                    rgba(0, 0, 139, 0.2) 150deg 165deg,
+                    transparent 165deg 180deg,
+                    rgba(0, 0, 139, 0.2) 180deg 195deg,
+                    transparent 195deg 210deg,
+                    rgba(0, 0, 139, 0.2) 210deg 225deg,
+                    transparent 225deg 240deg,
+                    rgba(0, 0, 139, 0.2) 240deg 255deg,
+                    transparent 255deg 270deg,
+                    rgba(0, 0, 139, 0.2) 270deg 285deg,
+                    transparent 285deg 300deg,
+                    rgba(0, 0, 139, 0.2) 300deg 315deg,
+                    transparent 315deg 330deg,
+                    rgba(0, 0, 139, 0.2) 330deg 345deg,
+                    transparent 345deg 360deg
+                );
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 139, 0.2);
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero h2,
+        .hero .tagline,
+        .hero .contact-info,
+        .hero .cta-button {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .hero .contact-info svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 5%;
+            background: var(--light-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 5%;
+            background: var(--white);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .step h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 5%;
+            background: var(--light-blue);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-blue);
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-whatsapp svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--white);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+                transform: translateY(-120%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .hero::before {
+                width: 200px;
+                opacity: 0.4;
+            }
+
+            .hero::after {
+                width: 60px;
+                height: 60px;
+                right: 30px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-whatsapp {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-whatsapp svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Surat Digital Services</h1>
+                    <p>FAST • ACCURATE • DIGITAL</p>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Welcome to Surat Digital Services</h2>
+        <p class="tagline">Fast • Accurate • Digital</p>
+        <div class="contact-info">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span>9227014969</span>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                <span>Home Service Available</span>
+            </div>
+        </div>
+        <a href="https://wa.me/919227014969?text=Hello%20Surat%20Digital%20Services,%20I%20need%20help%20with" class="cta-button" target="_blank">Contact Us on WhatsApp</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="200" height="130" rx="8" fill="url(#aadhaarGradient)"/>
+                        <text x="100" y="30" text-anchor="middle" fill="white" font-size="18" font-weight="bold">AADHAAR</text>
+                        <circle cx="40" cy="75" r="20" fill="white" opacity="0.3"/>
+                        <rect x="70" y="60" width="110" height="8" rx="4" fill="white" opacity="0.4"/>
+                        <rect x="70" y="75" width="90" height="6" rx="3" fill="white" opacity="0.4"/>
+                        <rect x="70" y="88" width="100" height="6" rx="3" fill="white" opacity="0.4"/>
+                        <text x="100" y="115" text-anchor="middle" fill="white" font-size="14" font-weight="bold">**** **** 1234</text>
+                        <defs>
+                            <linearGradient id="aadhaarGradient" x1="0" y1="0" x2="200" y2="130">
+                                <stop offset="0%" stop-color="#1976D2"/>
+                                <stop offset="100%" stop-color="#0D47A1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>Aadhaar Card Services</h3>
+                <p>ID update, address proof help, and all Aadhaar card related assistance</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="200" height="130" rx="8" fill="white" stroke="#0D47A1" stroke-width="3"/>
+                        <rect x="10" y="10" width="180" height="25" fill="#FFD700"/>
+                        <text x="100" y="28" text-anchor="middle" fill="#0D47A1" font-size="14" font-weight="bold">INCOME TAX DEPARTMENT</text>
+                        <circle cx="40" cy="75" r="18" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+                        <text x="40" y="80" text-anchor="middle" fill="#1976D2" font-size="14" font-weight="bold">👤</text>
+                        <rect x="70" y="55" width="110" height="7" rx="3" fill="#E3F2FD"/>
+                        <rect x="70" y="68" width="90" height="6" rx="3" fill="#E3F2FD"/>
+                        <rect x="70" y="80" width="100" height="6" rx="3" fill="#E3F2FD"/>
+                        <rect x="10" y="100" width="180" height="20" fill="#1976D2"/>
+                        <text x="100" y="114" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ABCDE1234F</text>
+                        <rect x="160" y="45" width="30" height="35" fill="#FFD700"/>
+                    </svg>
+                </div>
+                <h3>PAN Card Services</h3>
+                <p>New PAN card application and correction support</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="15" y="10" width="70" height="80" rx="4" fill="#1976D2"/>
+                        <rect x="20" y="20" width="60" height="8" rx="2" fill="white"/>
+                        <rect x="20" y="35" width="45" height="6" rx="2" fill="white" opacity="0.7"/>
+                        <rect x="20" y="47" width="50" height="6" rx="2" fill="white" opacity="0.7"/>
+                        <rect x="20" y="59" width="40" height="6" rx="2" fill="white" opacity="0.7"/>
+                        <circle cx="75" cy="75" r="15" fill="#FFD700"/>
+                        <path d="M70 75 L73 78 L80 71" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Online Form Filling</h3>
+                <p>Job forms, scholarship forms, and government form assistance</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="35" fill="#1976D2"/>
+                        <text x="50" y="60" text-anchor="middle" fill="white" font-size="32" font-weight="bold">₹</text>
+                        <path d="M50 15 L50 25 M50 75 L50 85 M15 50 L25 50 M75 50 L85 50" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="40" stroke="#0D47A1" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Loan Application Help</h3>
+                <p>Complete support for loan form applications</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="35" width="60" height="55" fill="#1976D2"/>
+                        <rect x="30" y="45" width="12" height="12" fill="white" opacity="0.8"/>
+                        <rect x="30" y="62" width="12" height="12" fill="white" opacity="0.8"/>
+                        <rect x="58" y="45" width="12" height="12" fill="white" opacity="0.8"/>
+                        <rect x="58" y="62" width="12" height="12" fill="white" opacity="0.8"/>
+                        <rect x="35" y="78" width="30" height="12" fill="#FFD700"/>
+                        <polygon points="50,10 20,35 80,35" fill="#0D47A1"/>
+                        <circle cx="75" cy="25" r="12" fill="#FFD700"/>
+                        <text x="75" y="30" text-anchor="middle" fill="#0D47A1" font-size="14" font-weight="bold">✓</text>
+                    </svg>
+                </div>
+                <h3>GST & MSME Registration</h3>
+                <p>Business registration and compliance services</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="15" y="20" width="70" height="60" rx="4" fill="white" stroke="#1976D2" stroke-width="3"/>
+                        <rect x="25" y="30" width="50" height="8" rx="2" fill="#1976D2"/>
+                        <rect x="25" y="43" width="35" height="5" rx="2" fill="#E3F2FD"/>
+                        <rect x="25" y="52" width="40" height="5" rx="2" fill="#E3F2FD"/>
+                        <rect x="25" y="61" width="30" height="5" rx="2" fill="#E3F2FD"/>
+                        <circle cx="70" cy="55" r="10" fill="#FFD700"/>
+                        <circle cx="70" cy="55" r="7" fill="white"/>
+                        <circle cx="70" cy="55" r="4" fill="#1976D2"/>
+                    </svg>
+                </div>
+                <h3>Ration Card & Gas Subsidy</h3>
+                <p>Ration card and gas connection subsidy assistance</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="15" width="50" height="70" rx="3" fill="#0D47A1"/>
+                        <circle cx="50" cy="40" r="12" fill="white" opacity="0.9"/>
+                        <text x="50" y="45" text-anchor="middle" fill="#0D47A1" font-size="14" font-weight="bold">👤</text>
+                        <rect x="35" y="58" width="30" height="4" rx="2" fill="white" opacity="0.7"/>
+                        <rect x="35" y="66" width="25" height="3" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="35" y="72" width="27" height="3" rx="1.5" fill="white" opacity="0.7"/>
+                        <path d="M30 85 Q50 80 70 85" stroke="#FFD700" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Passport Form Help</h3>
+                <p>Passport application and documentation support</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="40" rx="4" fill="#1976D2"/>
+                        <circle cx="25" cy="50" r="3" fill="white"/>
+                        <circle cx="75" cy="50" r="3" fill="white"/>
+                        <rect x="35" y="38" width="30" height="6" rx="2" fill="white"/>
+                        <rect x="35" y="48" width="25" height="4" rx="2" fill="white" opacity="0.7"/>
+                        <rect x="35" y="56" width="20" height="4" rx="2" fill="white" opacity="0.7"/>
+                        <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="1" stroke-dasharray="3,3"/>
+                        <rect x="30" y="15" width="40" height="8" rx="2" fill="#FFD700"/>
+                        <rect x="30" y="77" width="40" height="8" rx="2" fill="#FFD700"/>
+                    </svg>
+                </div>
+                <h3>Train Ticket & Printing</h3>
+                <p>Train ticket booking and document printing services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Contact on WhatsApp</h3>
+                <p>Send us a message on WhatsApp at 9227014969 with your requirement</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Send Documents</h3>
+                <p>Share required documents via WhatsApp or we can collect from your home</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Work Done Online</h3>
+                <p>We complete your work accurately and efficiently online</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Receive Documents</h3>
+                <p>Get your completed documents delivered to your doorstep</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info-box">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <strong>Mobile:</strong> 9227014969
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                        <strong>Working Hours:</strong> Mon-Sat, 9 AM - 8 PM
+                    </div>
+                </div>
+                <a href="https://wa.me/919227014969?text=Hello%20Surat%20Digital%20Services,%20I%20need%20help%20with" class="whatsapp-button" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Surat Digital Services</strong></p>
+        <p>Fast • Accurate • Digital</p>
+        <p>&copy; 2024 Surat Digital Services. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919227014969?text=Hello%20Surat%20Digital%20Services,%20I%20need%20help%20with" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header Shadow on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and steps
+        document.querySelectorAll('.service-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
